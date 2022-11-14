@@ -6,34 +6,71 @@ const items = ["🎩", "🏡", "😑", "🦄"];
 // define our state variable
 
 // how would you define the score state
-// let playerScore = 0;
-// let triesScore = 0;
-const initialSlot= 'X';
+
+
+
+let slotsValue; // stores the players dial
 let scores;
 
-//The init function should be called when the page loads or when we want to rest the game.
+//CACHED ELEMENTS
+//The elements (HTML) we're going to update repeatedly
+//when our state changes
+const scoresEls ={
+    player: document.querySelector('#p-score'),
+    tries: document.querySelector('#t-score')
+}
+
+const slotsValueEls = {
+    slot1: document.querySelector('#box1').items,
+    slot2: document.querySelector('#box2').items,
+    slot3: document.querySelector('#box3').items
+}
+
+
+
+//The init function should be called when the page loads
+// or when we want to reset the game.
 init();
 
-function init(){ //
+//init controller 
+function init(){ // controller function is updating our state
 
    
     let scores = {
         player: 0,
-        tries: 0,
-        
+        tries: 0
     }
     
-    let slots = {
-        let slot1 :document.getElementsByName('.box1').innerHTML = initialSlot,
-        let slot2: document.getElementsByName('.box2').innerHTML = initialSlot,
-        let slot3 : document.getElementsByName('.box3').innerHTML = initialSlot
+    let slotsValue = {
+        slot1: 'X',
+        slot2: 'X',
+        slot3: 'X'
     };
+
+    render(); // take out state variables;
+    // and represent visually on the view in some manor
+    //slotsValue.slot1 , slotsValue.slot1 , slotsValue.slot1 will be represented by a emoji/string
+    //AKA update the DOM
+    // gets called at the end of every controller function
 }
 
 //Initialize means score = 0, tries =0  and the slot1, slot2, slot3 equal 'X'
 
 
+function render (){
 
+    //UPDATE THE DOM to visually represent 
+    //our state variables
+
+ 
+    for (let key in scores) {
+        scoresEls[key].innerText = scores[key];
+    }
+
+
+    // scoresEls.player.innerHTML = scores.player;
+    // scoresEls.tries.innerHTML = scores.tries;
+}
 
 
 
@@ -46,6 +83,3 @@ console.log(items[randomItem])
 // let slot2 = document.querySelector('.box1') = items(randomItem())
 // let slot3 = document.querySelector('.box1') = items(randomItem())
 
-// rendr() {
-
-// }
