@@ -3,6 +3,7 @@
 
 const items = ["🎩", "🏡", "😑", "🦄"];
 
+
 // define our state variable
 
 // how would you define the score state
@@ -10,7 +11,7 @@ const items = ["🎩", "🏡", "😑", "🦄"];
 
 
 let slotsValue; // stores the players dial
-let scores;
+let scores; // stores the scores
 
 //CACHED ELEMENTS
 //The elements (HTML) we're going to update repeatedly
@@ -21,9 +22,9 @@ const scoresEls ={
 }
 
 const slotsValueEls = {
-    slot1: document.querySelector('#box1').items,
-    slot2: document.querySelector('#box2').items,
-    slot3: document.querySelector('#box3').items
+    slot1: document.querySelector('#box1'),
+    slot2: document.querySelector('#box2'),
+    slot3: document.querySelector('#box3')
 }
 
 
@@ -36,16 +37,18 @@ init();
 function init(){ // controller function is updating our state
 
    
-    let scores = {
+    scores = {
         player: 0,
         tries: 0
     }
     
-    let slotsValue = {
+    slotsValue = {
         slot1: 'X',
         slot2: 'X',
         slot3: 'X'
     };
+
+    
 
     render(); // take out state variables;
     // and represent visually on the view in some manor
@@ -67,9 +70,15 @@ function render (){
         scoresEls[key].innerText = scores[key];
     }
 
+    // for (let key in slotValue) {
+    //     slotsValueEls[key].innerText = slotsValue[key]
 
-    // scoresEls.player.innerHTML = scores.player;
-    // scoresEls.tries.innerHTML = scores.tries;
+
+    // }
+
+    // OR we can use the following notation:
+    // scoresEls.player.innerText = scores.player;
+    // scoresEls.tries.innerText= scores.tries;
 }
 
 
