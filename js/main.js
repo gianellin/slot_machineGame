@@ -31,9 +31,12 @@ function play (){
         scores.player +=1;
         scores.tries +=1;
         scores.winner = 'You won the game!';
-    } else {
+    } else if (slotsValue.slot1 === slotsValue.slot2 && slotsValue.slot1 !== slotsValue.slot3){
         scores.tries +=1;
         console.log('You lost, try again!')
+        scores.winner = 'TRY AGAIN!';
+    } else {
+        scores.winner = ""
     }
     
     // AT THE END OF EVERY CONTROLLER FUNCTION CALL RENDR

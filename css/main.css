@@ -89,22 +89,25 @@ button {
     height: 5vmin;
     justify-content: center;
     align-items: center;
-    margin: .5vmin;
-    border: .4vmin solid grey;
+    margin: 5vmin;
+   
     border-radius: 0.5vmin;
 
   }
 
   #play {
-    background-color: rgb(15, 71, 15);
+    background-color: rgb(76, 0, 255);
     font-weight: bold;
     font-size: 3vmin;
     color: white;
+    
   }
 
   #reset{
     background-color: rgb(186, 189, 159);
     font-weight: bold;
-    font-size: 2vmin;
+    font-size: 1.5vmin;
     color: white;
   }
+
+  
