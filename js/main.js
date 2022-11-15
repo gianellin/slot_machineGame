@@ -1,7 +1,3 @@
-
-
-
-
 // 1 These are the options for the slot
 
 const items = ["🎩", "🏡", "😑", "🦄"];
@@ -28,13 +24,13 @@ function play (){
     slotsValue.slot2 = getRandomSlotValues();
     slotsValue.slot3 = getRandomSlotValues();
 
+
     // Place the loosing and winning condition
     //then update the  state (scores and tries) with that value
     if (slotsValue.slot1 === slotsValue.slot2 && slotsValue.slot1 === slotsValue.slot3) {
         scores.player +=1;
         scores.tries +=1;
-        console.log('YOU WON $$$$$!')
-       
+        scores.winner = 'You won the game!';
     } else {
         scores.tries +=1;
         console.log('You lost, try again!')
@@ -46,7 +42,7 @@ function play (){
 
 // define our state variable
 // how would you define the score state
-let slotsValue; // stores the players dial or
+let slotsValue; // stores the players dial
 let scores; // stores the scores
 
 
@@ -55,7 +51,8 @@ let scores; // stores the scores
 //when our state changes
 const scoresEls ={
     player: document.querySelector('#p-score'),
-    tries: document.querySelector('#t-score')
+    tries: document.querySelector('#t-score'),
+    winner: document.querySelector('#winner')
 }
 
 const slotsValueEls = {
@@ -76,7 +73,8 @@ function init(){ // controller function is updating our state
    
     scores = {
         player: 0,
-        tries: 0
+        tries: 0,
+        winner:'',
     }
     
     slotsValue = {
@@ -106,6 +104,7 @@ function render (){
     slotsValueEls.slot1.innerText = slotsValue.slot1
     slotsValueEls.slot2.innerText = slotsValue.slot2
     slotsValueEls.slot3.innerText = slotsValue.slot3
+
     
 }
 
