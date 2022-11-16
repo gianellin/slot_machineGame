@@ -30,14 +30,18 @@ function play (){
     if (slotsValue.slot1 === slotsValue.slot2 && slotsValue.slot1 === slotsValue.slot3) {
         scores.player +=1;
         scores.tries +=1;
-        scores.winner = 'You won the game!';
-    } else if (slotsValue.slot1 === slotsValue.slot2 && slotsValue.slot1 !== slotsValue.slot3){
-        scores.tries +=1;
-        console.log('You lost, try again!')
-        scores.winner = 'TRY AGAIN!';
-    } else {
-        scores.winner = ""
-    }
+        scores.winner = 'Jackpot! You won the game!';
+         } else if (slotsValue.slot1 === slotsValue.slot2 && slotsValue.slot1 !== slotsValue.slot3){
+            scores.tries +=1;
+            console.log('You lost, try again!')
+            scores.winner = 'Try again!';
+            } else if (slotsValue.slot1 !== slotsValue.slot2 && slotsValue.slot1 !== slotsValue.slot3){
+                    scores.tries +=1;
+                    console.log('You lost again, You can do it!')
+                    scores.winner = 'Next is a winner! You can do it!';
+                } else if (slotsValue.slot1 !== slotsValue.slot2 && slotsValue.slot1 === slotsValue.slot3) {
+                    scores.winner = '';
+                }
     
     // AT THE END OF EVERY CONTROLLER FUNCTION CALL RENDR
     render()
