@@ -9,12 +9,21 @@ button.addEventListener('click', play);
 const button2 =document.querySelector('#reset')
 button2.addEventListener('click', init);
 
+
+// is to randomly return
+// 'slot 1' 'slot 2' 'slot3' with randon values = out the "emojis"
 function getRandomSlotValues() {
-    // is to randomly return
-    // 'slot 1' 'slot 2' 'slot3' with randon values = out the "emojis"
+    
     const randomItem = Math.floor(Math.random()*items.length);
     return items[randomItem]
 }
+
+
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  x.play(); 
+} 
 
 function play (){
     console.log("button is working")
@@ -36,14 +45,15 @@ function play (){
             console.log('You lost, try again!')
             scores.winner = 'Try again!';
             } else if (slotsValue.slot1 !== slotsValue.slot2 && slotsValue.slot1 !== slotsValue.slot3){
-                    scores.tries +=1;
-                    console.log('You lost again, You can do it!')
-                    scores.winner = 'Next is a winner! You can do it!';
+                scores.tries +=1;
+                console.log('You lost again, You can do it!')
+                scores.winner = 'Next is a winner! You can do it!';
                 } else if (slotsValue.slot1 !== slotsValue.slot2 && slotsValue.slot1 === slotsValue.slot3) {
                     scores.winner = '';
-                }
-    
+                    }
+    playAudio()
     // AT THE END OF EVERY CONTROLLER FUNCTION CALL RENDR
+    
     render()
 }
 
@@ -107,6 +117,8 @@ function render (){
     for (let key in scores) {
         scoresEls[key].innerText = scores[key];
     }
+
+    // numbersEls.message.innerText = numbers.message
 
     slotsValueEls.slot1.innerText = slotsValue.slot1
     slotsValueEls.slot2.innerText = slotsValue.slot2

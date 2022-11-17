@@ -2,6 +2,9 @@
 
 ## Introduction
 
+![Illustration](slot_machineGame/src/slot_asset.png)
+
+
 The first **slot machine** was called *"gambling machine"*, and it was created in Brooklyn, New York by Sittman and Pitt in 1891. It contained five drums holding a total of 50 card faces and was based on poker; it would give you poker hands every time you played. It became extremely popular.
 
 Slot machines were also known as a **one-armed** **bandit** because of the large mechanical lever affixed to the side, which in many cases is what makes the slots spin. This machine version with the lever was how it was originally assembled.
@@ -146,3 +149,4 @@ If you play this game, have fun!
 1. [https://www.britannica.com/topic/slot-machine](https://www.britannica.com/topic/slot-machine)
 2. [https://www.online-casinos.com/slots/history/](https://www.online-casinos.com/slots/history/)
 3. [https://www.casinosmash.com/features/how-to-use-probability-to-win-at-slots ](https://www.casinosmash.com/features/how-to-use-probability-to-win-at-slots )
+4. Sound Effect by [StudioAlivioGlobal](https://pixabay.com/sound-effects//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=124464)
