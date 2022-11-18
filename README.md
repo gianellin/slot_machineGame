@@ -30,78 +30,14 @@ Then in JavaScript different objects were created:
 
 2. The state variables.
 
-	let scores;
-	let slotsvalue; 
-
 3. The first function created was init() to initialize the game.
-
-    let scores; --> this is score, tries, and winner (as keys).
-	let slotsvalue; --> this is the slots (as keys).   
 
 4. The second function created was render(). Created to update the DOM.
 
-    function render (){
-
-    //UPDATE THE DOM to visually represent 
-    //our state variables
-    
-    for (let key in scores) {
-        scoresEls[key].innerText = scores[key];
-    }
-
-
-    slotsValueEls.slot1.innerText = slotsValue.slot1
-    slotsValueEls.slot2.innerText = slotsValue.slot2
-    slotsValueEls.slot3.innerText = slotsValue.slot3
-    
-    }
-
 5. Then the cached elements were created as well.
-
-    const scoresEls = {
-        player: document.querySelector('#p-score'),
-        tries: document.querySelector('#t-score'),
-        winner: document.querySelector('#winner')
-    }
-
-    const slotsValueEls = {
-        slot1: document.querySelector('#box1'),
-         slot2: document.querySelector('#box2'),
-        slot3: document.querySelector('#box3')
-    }
-
 
 6. The getRandomValues () function was created at the same time as the play() function.
    These are the funtions that will run the logic of the game, first creating the random values of the slots, and then meeting the conditions for the game.
-
-	function play (){
-    console.log("button is working")
-
-    //randomly generate a value for the 3 slots 
-    slotsValue.slot1 = getRandomSlotValues();
-    slotsValue.slot2 = getRandomSlotValues();
-    slotsValue.slot3 = getRandomSlotValues();
-
-
-    // Place the loosing and winning condition
-    //then update the  state (scores and tries) with that value
-    if (slotsValue.slot1 === slotsValue.slot2 && slotsValue.slot1 === slotsValue.slot3) {
-        scores.player +=1;
-        scores.tries +=1;
-        scores.winner = 'Jackpot! You won the game!';
-        } else { 
-            scores.tries +=1;
-            console.log('You lost, try again!')
-            scores.winner = "Try again!"
-            }
-
-    playAudio()
-    stop()
-    
-    // AT THE END OF EVERY CONTROLLER FUNCTION CALL RENDR
-
-    render()
-    }
 
 7. After having a functional game, other functions were created to enhance the experience of the user. Such as the stop () function and the playAudio() function.
 
