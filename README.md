@@ -1,9 +1,7 @@
 # slot machine
-
 ## Introduction
 
-![Illustration](slot_machineGame/src/slot_asset.png)
-
+![illustration](src/slot_asset.png) 
 
 The first **slot machine** was called *"gambling machine"*, and it was created in Brooklyn, New York by Sittman and Pitt in 1891. It contained five drums holding a total of 50 card faces and was based on poker; it would give you poker hands every time you played. It became extremely popular.
 
@@ -150,3 +148,4 @@ If you play this game, have fun!
 2. [https://www.online-casinos.com/slots/history/](https://www.online-casinos.com/slots/history/)
 3. [https://www.casinosmash.com/features/how-to-use-probability-to-win-at-slots ](https://www.casinosmash.com/features/how-to-use-probability-to-win-at-slots )
 4. Sound Effect by [StudioAlivioGlobal](https://pixabay.com/sound-effects//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=124464)
+5. [https://www.cdnfonts.com/](https://www.cdnfonts.com/)
