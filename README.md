@@ -145,7 +145,7 @@ In other words, the odds of winning this game are 0.0156 with the current set up
 1. HTML
 2. CSS
 3. JavaScript
-4. IDE --> VS Code.
+4. Editor --> VS CODE.
 5. GitHub
 
 
