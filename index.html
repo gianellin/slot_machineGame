@@ -1,40 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slot Machine</title>
+    <link href="https://fonts.cdnfonts.com/css/sistemas-font-bt" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/fd-spank" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/main.js"></script>
-
-</head>
-
-<body>
-
     <audio id ="myAudio">
         <source src="src/interface-124464.mp3" type="audio/mpeg"/>
     </audio>
-   
+
+
+</head>
+
+<div class="topnav">
+    <div class="logo">play stop.</div> 
+    <div class="hamburger">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+</div>
+<body>
     <main>
-        <h1>SLOT MACHINE GAME</h1>
+        <h1>SLOT MACHINE</h1>
         
-        <div class="containerBox">
-            <div class ="box">
-                <div id="box1"></div>
-                <div id="box2"></div>
-                <div id="box3"></div>
+            <div class="containerBox">
+                <div class ="box">
+                     <div id="box1"></div>
+                     <div id="box2"></div>
+                     <div id="box3"></div>
+                </div>
+            </div>
+            <div class="buttons">
+           
+                <button id="play">PLAY</button>
+                <button id="reset">Start Over</button>
+            </div>
+            <div id="valuesBox"> 
+                <div>SCORE: <span id="p-score"></span> </div>
+                <div>TRIES: <span id="t-score"></span> </div>
+            </div>
+            <div id="messageBox">
+                <div id="winner"> </div>
             </div>
         </div>
-        <div class="buttons">
-           
-            <button id="play">PLAY</button>
-            <button id="reset">Start Over</button>
-        </div>
-        <h2>SCORE: <a id="p-score"></a> </h2>
-        <h2>TRIES: <a id="t-score"></a> </h2>
-        <h1 id="winner"> </h1>
-            
+        
     </main>
+    <footer class="footer">play stop.</span></footer>
 </body>
+
 </html>

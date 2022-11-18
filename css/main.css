@@ -1,112 +1,193 @@
 
-  html,
+html,
+
 body {
-    width: 100vw;
-    height: 100vh;
-     margin: 0;
-     border: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(211, 222, 177);
-    background-image: url("/Users/gia/code/slot_machineGame/src/slotsbackground.jpg");
-    color: white;
-}
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'FD Spank', sans-serif;
+  color: white;
+  background-color: #65C298;
+  }
+.topnav {
+  background-color: rgb(71, 75, 73);
+  height: 6vh;
+  width: 100%;
+  position:relative;
+  }
+
+.logo {
+  display: block;
+  float: left;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-family: 'SISTEMAS FONT BT', sans-serif;
+  font-size: 25px;
+  }
+
+.hamburger {
+  display: block;
+  float:right;
+  margin-right: 25px;
+  margin-top: 15px;
+  }
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  background-color: rgb(248, 238, 238);
+  }
+
 main {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal; 
+  align-items: center;
+  }
 
-    display: flex;
-    flex-direction: column;
-    justify-content: normal; 
-    align-items: center;
-    margin-top: 1px;
-}
+.case {
 
+  display: flex;
+  flex-direction: column;
+  justify-content: normal; 
+  align-items: center;
+  margin-left: center;
+  outline-style: dashed;
+  outline-width: thick;
+  padding: 40px 40px 40px 40px;
+  }
 
 .containerBox { 
-    display: flex;
-}
+  display: flex;
+  }
 
 .box{
-    display : flex;
-    border-radius: 1ex;
-    margin: 1ch;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  display : flex;
+  border-radius: 1ex;
+  margin: 1ch;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 
-}
+  }
   
 #box1 {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-  height: 250px;
+  height: 190px;
   width: 150px;
-  outline-width:thick; 
-  outline-style: groove;
+  outline-width: thick; 
+  outline-style: double ;
   background-color: rgb(211, 203, 203);
   padding: 1px 1px 1px 1px;
   border-radius: 1ex;
   margin-right: 5vmin;
 
-}
+  }
+
 #box2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    height: 250px;
-    width: 150px;
-    outline-width:thick; 
-    outline-style: groove;
-    background-color: rgb(211, 203, 203);
-    padding: 1px 1px 1px 1px;
-    border-radius: 1ex;
-    
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  height: 190px;
+  width: 150px;
+  outline-width: thick; 
+  outline-style: double ;
+  background-color: rgb(211, 203, 203);
+  padding: 1px 1px 1px 1px;
+  border-radius: 1ex; 
+
+  }
+
 #box3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    height: 250px;
-    width: 150px;
-    outline-width: thick; 
-    outline-style: groove;
-    background-color: rgb(211, 203, 203);
-    padding: 1px 1px 1px 1px;
-    border-radius: 1ex;
-    margin-left: 5vmin;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  height: 190px;
+  width: 150px;
+  outline-width: thick; 
+  outline-style: double;
+  background-color: rgb(211, 203, 203);
+  padding: 1px 1px 1px 1px;
+  border-radius: 1ex;
+  margin-left: 5vmin;
+  }
 
 button {
-  
-    display: flex;
-    width: 30vmin;
-    height: 5vmin;
-    justify-content: center;
-    align-items: center;
-    margin: 5vmin;
-    border-radius: 0.5vmin;
 
+  display: flex;
+  margin: 2vmin;
+  border-radius: 0.5vmin;
+  justify-content: center;
+  align-items: center;
+  
   }
 
-  #play {
-    background-color: rgb(76, 0, 255);
-    font-weight: bold;
-    font-size: 3vmin;
-    color: white;
+#play {
+  width: 22vmin;
+  height: 10vmin;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(216, 16, 16);
+  font-weight: bold;
+  font-size: 3vmin;
+  color: white;
     
   }
+ 
+#reset{
+  display: flex;
+  width: 22vmin;
+  height: 7vmin;
+  background-color: rgb(133, 120, 131);
+  font-weight: bold;
+  font-size: 2vmin;
+  color: white;
+  }
+#valuesBox{
+  display: flex;
+  margin-top: 10px;
+  font-size: 30px;
 
-  #reset{
-    background-color: rgb(246, 38, 211);
-    font-weight: bold;
-    font-size: 1.5vmin;
-    color: white;
+  }
+#p-score, #t-score {
+  display: 50%
+  } 
+
+#p-score {
+  margin-right: 40px;
+  }
+  
+
+#messageBox {
+  background-color: black;
+  width: 50vmin;
+  height: 20vmin;
+  margin-top: 20px;
   }
 
-  
+#winner {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 25px;
+  }
+
+
+footer {
+  padding: 15px 0px 40px 20px;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(71, 75, 73);
+  position: fixed;
+  font-family: 'SISTEMAS FONT BT', sans-serif;
+  font-size: 25px;
+  }

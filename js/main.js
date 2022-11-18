@@ -1,4 +1,4 @@
-// 1 These are the options for the slot
+// SLOT MACHINE GAME
 
 const items = ["🎩", "🏡", "😑", "🦄"];
 
@@ -10,8 +10,8 @@ const button2 =document.querySelector('#reset')
 button2.addEventListener('click', init);
 
 
-// is to randomly return
-// 'slot 1' 'slot 2' 'slot3' with randon values = out the "emojis"
+// Generates a random value
+// 'slot 1' 'slot 2' 'slot3' with randon values = out the "emojis" array.
 function getRandomSlotValues() {
     
     const randomItem = Math.floor(Math.random()*items.length);
@@ -19,12 +19,24 @@ function getRandomSlotValues() {
 }
 
 
-var x = document.getElementById("myAudio"); 
+//function that stops the game
+function stop() {
+    if (scores.tries === 10 ) {
+        document.querySelector('#play').disabled = true;
+        button.style.background = "grey";
+        scores.winner = "You have run out of tries. Start Over!"
+    } 
+}
 
+
+// variable with audio Audio
+const x = document.getElementById("myAudio"); 
+// function that plays the audio
 function playAudio() { 
   x.play(); 
 } 
 
+// controller function
 function play (){
     console.log("button is working")
 
@@ -40,21 +52,19 @@ function play (){
         scores.player +=1;
         scores.tries +=1;
         scores.winner = 'Jackpot! You won the game!';
-         } else if (slotsValue.slot1 === slotsValue.slot2 && slotsValue.slot1 !== slotsValue.slot3){
+        } else { 
             scores.tries +=1;
             console.log('You lost, try again!')
-            scores.winner = 'Try again!';
-            } else if (slotsValue.slot1 !== slotsValue.slot2 && slotsValue.slot1 !== slotsValue.slot3){
-                scores.tries +=1;
-                console.log('You lost again, You can do it!')
-                scores.winner = 'Next is a winner! You can do it!';
-                } else if (slotsValue.slot1 !== slotsValue.slot2 && slotsValue.slot1 === slotsValue.slot3) {
-                    scores.winner = '';
-                    }
+            scores.winner = "Try again!"
+            }
+
     playAudio()
-    // AT THE END OF EVERY CONTROLLER FUNCTION CALL RENDR
+    stop()
     
+    // AT THE END OF EVERY CONTROLLER FUNCTION CALL RENDR
+
     render()
+
 }
 
 // define our state variable
@@ -62,11 +72,11 @@ function play (){
 let slotsValue; // stores the players dial
 let scores; // stores the scores
 
-
 //CACHED ELEMENTS
 //The elements (HTML) we're going to update repeatedly
 //when our state changes
-const scoresEls ={
+
+const scoresEls = {
     player: document.querySelector('#p-score'),
     tries: document.querySelector('#t-score'),
     winner: document.querySelector('#winner')
@@ -100,12 +110,15 @@ function init(){ // controller function is updating our state
         slot3: 'X'
     };
 
+    document.querySelector('#play').disabled = false;
+    button.style.background = "rgb(216, 16, 16)";
+
     render(); 
     // take out state variables;
     // and represent visually on the view in some manner
     //slotsValue.slot1 , slotsValue.slot1 , slotsValue.slot1 will be represented by a emoji/string
     //AKA update the DOM
-    // render() gets called at the end of every controller function
+   
 }
 
 
