@@ -1,7 +1,7 @@
 # slot machine
 ## Introduction
 
-![illustration](src/slot_asset.png) 
+![illustration](assets/slot_asset.png) 
 
 The first **slot machine** was called *"gambling machine"*, and it was created in Brooklyn, New York by Sittman and Pitt in 1891. It contained five drums holding a total of 50 card faces and was based on poker; it would give you poker hands every time you played. It became extremely popular.
 
@@ -20,7 +20,7 @@ To develop this game the Model - View - Controller architecture was used.
 
 The basic structure of the game was the first thing that was created. All the basic elements were created and properly identified with HTML and CSS. This was done based on the wireframes and user stories from the plan.
 
-![wireframe](plan/wireframe1.png)
+![wireframe](PLAN/wireframe2.png)
 
 Then in JavaScript different objects were created:
 
@@ -45,21 +45,21 @@ Then in JavaScript different objects were created:
 
 The game loads in the browser showing its initial values before the player starts.
 
-![Start](src/game0.png)
+![Start](assets/game0.png)
 
 There is no trick or strategy around this game to win. This is a game of chance. 
 
 In this specific case, the slots are only showing random values generated every-time the user presses the button "PLAY".
 
-![Playing](src/game01.png)
+![Playing](assets/game01.png)
 
 Every time the user get 3 slots with the same "emoji" , the user wins. 
 
-![Playing](src/game1.png)
+![Playing](assets/game1.png)
 
 The user can win multiple times in one run. However, the game stops - the play button is disabled, once the player has reached her/his 10th try.
 
-![Playing](src/game2.png)
+![Playing](assets/game2.png)
 
 ## Possible combinations
 
