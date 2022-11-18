@@ -50,6 +50,13 @@ main {
   align-items: center;
   }
 
+#ghost {
+  display: block;
+  image-resolution: 300doi;
+
+
+}
+
 .case {
 
   display: flex;
@@ -57,7 +64,7 @@ main {
   justify-content: normal; 
   align-items: center;
   margin-left: center;
-  outline-style: dashed;
+  outline-style: double;
   outline-width: thick;
   padding: 40px 40px 40px 40px;
   }
