@@ -14,33 +14,65 @@ Slot machines are the most played game in casinos - they are approximately 70% o
 
 ## Description
 
-This is a digital slot Machine - the kind you may find in Atlantic City &/or Las Vegas, without the spinning/rolling feature. It is a browser-based game that was developed to put in practice many of the concepts in class.
+This is a digital slot Machine - the kind you may find in Atlantic City &/or Las Vegas, without the spinning/rolling feature. It is a browser-based game that was developed to put in practice many of the concepts studied in class.
+
+To develop this game the Model - View - Controller architecture was used.
+
+The basic structure of the game was the first thing that was created. All the basic elements were created and properly identified with HTML and CSS. This was done based on the wireframes and user stories from the plan.
+
+![wireframe](plan/wireframe1.png)
+
+Then in JavaScript different objects were created:
+
+1. The array with the items that are going to show in the slots.
+
+###  "🎩", "🏡", "😑", "🦄"
+
+2. The state variables.
+
+	let scores;
+	let slotsvalue; 
+
+3. The first function created was init() to initialize the game.
+
+    let scores; --> this is score, tries, and winner (as keys).
+	let slotsvalue; --> this is the slots (as keys).   
+
+4. The second function created was render(). Created to update the DOM.
+
+    function render (){
+
+    //UPDATE THE DOM to visually represent 
+    //our state variables
+    
+    for (let key in scores) {
+        scoresEls[key].innerText = scores[key];
+    }
 
 
-    Model - View - Controller
+    slotsValueEls.slot1.innerText = slotsValue.slot1
+    slotsValueEls.slot2.innerText = slotsValue.slot2
+    slotsValueEls.slot3.innerText = slotsValue.slot3
+    
+    }
 
-I started with the View. 
+5. Then the cached elements were created as well.
 
-Created a basic structure with all the needed elements, and made them visible enough to be able to use them when I developed the code. For this I used HTML and CSS.
+    const scoresEls = {
+        player: document.querySelector('#p-score'),
+        tries: document.querySelector('#t-score'),
+        winner: document.querySelector('#winner')
+    }
 
-I guided myself with the user stories and wireframe I made initially.
-
-1. Create the objects and its properties. The array with the emojis was created. 
-
-2. State Variables/ they will keep updating
-
-	let scores; --> this is score, and tries (as keys)
-	let slotsvalue; --> this is the slots (as keys)
-	let winner; --> this is a message, string variable.
-
-The controller functions are used to update the model, state.
-
-2. Created the render() function. Update the DOM.
+    const slotsValueEls = {
+        slot1: document.querySelector('#box1'),
+         slot2: document.querySelector('#box2'),
+        slot3: document.querySelector('#box3')
+    }
 
 
-3. Controller functions and Cache elements.
-
-The following function is the most important function I have:
+6. The getRandomValues () function was created at the same time as the play() function.
+   These are the funtions that will run the logic of the game, first creating the random values of the slots, and then meeting the conditions for the game.
 
 	function play (){
     console.log("button is working")
@@ -57,61 +89,55 @@ The following function is the most important function I have:
         scores.player +=1;
         scores.tries +=1;
         scores.winner = 'Jackpot! You won the game!';
-         } else if (slotsValue.slot1 === slotsValue.slot2 && slotsValue.slot1 !== slotsValue.slot3){
+        } else { 
             scores.tries +=1;
             console.log('You lost, try again!')
-            scores.winner = 'Try again!';
-            } else if (slotsValue.slot1 !== slotsValue.slot2 && slotsValue.slot1 !== slotsValue.slot3){
-                scores.tries +=1;
-                console.log('You lost again, You can do it!')
-                scores.winner = 'Next is a winner! You can do it!';
-                } else if (slotsValue.slot1 !== slotsValue.slot2 && slotsValue.slot1 === slotsValue.slot3) {
-                    scores.winner = '';
-                    }
+            scores.winner = "Try again!"
+            }
+
+    playAudio()
+    stop()
     
+    // AT THE END OF EVERY CONTROLLER FUNCTION CALL RENDR
+
     render()
-	}
+    }
 
+7. After having a functional game, other functions were created to enhance the experience of the user. Such as the stop () function and the playAudio() function.
 
-But it would not work if the getRandomValues() function doesn't work.
+## Playing Slot Machine
 
+The game loads in the browser showing its initial values before the player starts.
 
-	function getRandomSlotValues() {
- 
-    	const randomItem = Math.floor(Math.random()*items.length);
-    	return items[randomItem]
-	}
-
-
-
+![Start](src/game0.png)
 
 There is no trick or strategy around this game to win. This is a game of chance. 
 
 In this specific case, the slots are only showing random values generated every-time the user presses the button "PLAY".
 
+![Playing](src/game01.png)
 
 Every time the user get 3 slots with the same "emoji" , the user wins. 
 
-###  "🎩", "🏡", "😑", "🦄"
+![Playing](src/game1.png)
 
+The user can win multiple times in one run. However, the game stops - the play button is disabled, once the player has reached her/his 10th try.
 
-In this current representation, there are 3 slots, with 4 symbols each (the 4 emojis previously shown). So the total number of possible combinations is:
+![Playing](src/game2.png)
 
-	 4 x 4 x 4 = 64 combinations. 
+## Possible combinations
 
-There are 4 winning combinations out of the total 64. So the probability of winning this game is:
+In this current representation, there are 3 slots with 4 items each (the 4 emojis previously shown). Therefore the total number of possible combinations are:
 
-Number of winning combinations / Number of possible combinations = 
+	 4 x 4 x 4 = 64.
+
+There are 4 winning combinations out of the total 64 available. So the probability of winning this game is:
+
+Number of winning combinations / Number of possible combinations
 
 	= 4/64 = 0.0156.
 
-In other words, 0.0156 are the odds of winning this game with the current set up.
-
-
----
-
-<img> init
-<img> winning/playing
+In other words, the odds of winning this game are 0.0156 with the current set up.
 
 
 ## Technologies Used: 
@@ -123,29 +149,36 @@ In other words, 0.0156 are the odds of winning this game with the current set up
 5. GitHub
 
 
-## Getting Started: 
+## Playing 
 
-You can find my slot machine game [here](https://github.com/gianellin/slot_machineGame), where you may find my code, wireframes and other assets.
+You can find my slot machine game [here](https://gianellin.github.io/slot_machineGame/), where you may find my code, wireframes and other assets.
 
+Try your luck! And find out how many times you can win a game of chance like this version of Slot Machine in 10 tries.
 
-If you play this game, have fun! 
+You can play this game from any device connected to the internet for free. It has no prize, but you can have a lot of fun!
 
 ## Next Steps: Planned future enhancements (icebox items).
 
 1. Add spinning feature to slots.
 
     1.1 It can have an activation "button" to start the spinning to work as a lever.
-		Look into j.query.
+		Look into J.query animatios.
 
-2. Add audio effects to buttons and future animations.
-3. The odds can be increased by considering other partial combinations.
-4. Slot emojis could be swap up for higher resolution images of fruits.
-5. If implemented, this game could add a payment digital feature, based out on crypto, or normal currency ($$$).
+2. Add audio effects to other buttons and message box.
+3. The odds of winning this game can be increased by considering other partial combinations.
+4. More slots can be added to this set up.
+5. Emojis could be swap up for higher resolution images of fruits.
+6. If implemented:
+
+    6.1 Link to an account.
+    6.2 Print out a real prize.
+    6.2 Add payment digital feature, based out on crypto, or normal currency ($$$).
 
 ### References: 
 
 1. [https://www.britannica.com/topic/slot-machine](https://www.britannica.com/topic/slot-machine)
 2. [https://www.online-casinos.com/slots/history/](https://www.online-casinos.com/slots/history/)
-3. [https://www.casinosmash.com/features/how-to-use-probability-to-win-at-slots ](https://www.casinosmash.com/features/how-to-use-probability-to-win-at-slots )
+3. [https://www.casinosmash.com/features/how-to-use-probability-to-win-at-slots ](https://www.casinosmash.com/features/how-to-use-probability-to-win-at-slots) 
 4. Sound Effect by [StudioAlivioGlobal](https://pixabay.com/sound-effects//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=124464)
 5. [https://www.cdnfonts.com/](https://www.cdnfonts.com/)
+6. [Slot Machine](https://gianellin.github.io/slot_machineGame/) 

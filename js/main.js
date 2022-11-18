@@ -110,10 +110,12 @@ function init(){ // controller function is updating our state
         slot3: 'X'
     };
 
+    //added for button restrictions / number of tries.
     document.querySelector('#play').disabled = false;
     button.style.background = "rgb(216, 16, 16)";
 
     render(); 
+
     // take out state variables;
     // and represent visually on the view in some manner
     //slotsValue.slot1 , slotsValue.slot1 , slotsValue.slot1 will be represented by a emoji/string
@@ -131,17 +133,9 @@ function render (){
         scoresEls[key].innerText = scores[key];
     }
 
-    // numbersEls.message.innerText = numbers.message
-
     slotsValueEls.slot1.innerText = slotsValue.slot1
     slotsValueEls.slot2.innerText = slotsValue.slot2
     slotsValueEls.slot3.innerText = slotsValue.slot3
 
     
 }
-
-
-
-
-
-
