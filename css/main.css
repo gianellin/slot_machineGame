@@ -13,12 +13,14 @@ body {
   font-family: 'FD Spank', sans-serif;
   color: white;
   background-color: #65C298;
+  justify-content: center;
   }
 .topnav {
   background-color: rgb(71, 75, 73);
   height: 6vh;
   width: 100%;
-  position:relative;
+  position: absolute;
+  position: fixed;
   }
 
 a:link {
@@ -38,17 +40,22 @@ a:visited {
   display: block;
   float: left;
   margin-left: 20px;
-  margin-top: 20px;
   font-family: 'SISTEMAS FONT BT', sans-serif;
-  font-size: 25px;
+  margin-top: .7rem;
+  font-size: 1.2rem;
+  width: 50%;
   }
 
 .hamburger {
   display: block;
   float:right;
   margin-right: 25px;
-  margin-top: 15px;
+  margin-top: .2rem;
+
   }
+
+
+
 .bar1, .bar2, .bar3 {
   width: 35px;
   height: 5px;
@@ -63,9 +70,12 @@ main {
   align-items: center;
   }
 
-#ghost {
-  display: block;
-}
+  #title{
+    text-align: center;
+    justify-content: center;
+
+  }
+
 
 .case {
 
@@ -76,25 +86,32 @@ main {
   margin-left: center;
   outline-style: double;
   outline-width: thick;
-  padding: 40px 40px 40px 40px;
+  padding: 1rem;
+  margin-top: 7rem;
+  width: 80%;
   }
 
 .containerBox { 
   display: flex;
+
   }
 
 .box{
   display : flex;
   border-radius: 1ex;
+  padding-top: 5rem;
   margin: 1ch;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 
   }
+
+
   
 #box1 {
   display: flex;
+  flex: 20%;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
@@ -111,6 +128,7 @@ main {
 
 #box2 {
   display: flex;
+  flex: 20%;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
@@ -126,6 +144,7 @@ main {
 
 #box3 {
   display: flex;
+  flex: 20%;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
@@ -172,8 +191,9 @@ button {
   }
 #valuesBox{
   display: flex;
-  margin-top: 10px;
-  font-size: 30px;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  gap: 1.7rem;
 
   }
 #p-score, #t-score {
@@ -206,25 +226,22 @@ footer {
   background-color: rgb(71, 75, 73);
   position: fixed;
   font-family: 'SISTEMAS FONT BT', sans-serif;
-  font-size: 25px;
+  font-size: 1.2rem;
   }
 
-  .element {
-    height: 400px;
-    width: 400px;
-    background-color: red;
+#ghost {
+    display: block;
     animation: 
-      pulse 3s ease infinite alternate, 
-      nudge 5s linear infinite alternate;
-    border-radius: 100%;
+        pulse 3s ease infinite alternate, 
+        nudge 5s linear infinite alternate;
   }
   
   @keyframes pulse {
     0%, 100% {
-      background-color: red;
+      background-color:none;
     }
     50% {
-      background-color: rgb(67, 65, 61);
+      background-color:none;
     }
   }
   
